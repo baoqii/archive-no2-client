@@ -1,10 +1,12 @@
 import { Outlet } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
+import SideMenu from "../components/SideMenu";
 
 const Layout = () => {
   return (
     <>
-      <main className="relative mx-auto my-[50px] w-[calc(250px+570px+100px)]">
+      <main className="container relative mx-auto my-[50px] w-[calc(300px+700px+100px)]">
+        <SideMenu />
         <Sidebar />
         <Outlet />
       </main>
