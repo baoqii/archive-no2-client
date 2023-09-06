@@ -10,7 +10,7 @@ const NotFoundPage = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 3 }}
     >
-      <div className=" mx-auto">
+      <div className="mx-auto h-[500px]">
         <h1 className="px-6 pt-4 text-9xl mb-24 mx-0 font-lato text-mine-shaft-950 dark:text-silver-400 tracking-wider leading-5 font-bold not-italic">
           404
         </h1>
