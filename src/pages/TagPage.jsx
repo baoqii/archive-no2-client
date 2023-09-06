@@ -42,7 +42,7 @@ const TagPage = () => {
       animate="visible"
       exit={{ opacity: 0, transition: { duration: 0.5 } }}
     >
-      <div>
+      <div className="h-[600px]">
         {tags.length === 0 ? (
           <p className="p-6 text-mine-shaft-950 dark:text-silver-400 font-lato text-2xl tracking-wider leading-5 font-bold italic">
             No tags available.
