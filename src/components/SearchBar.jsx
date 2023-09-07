@@ -1,9 +1,14 @@
+import { useContext, useState } from "react";
 import { Search } from "react-feather";
+import { SearchContext } from "../contexts/SearchContext";
 
-const Searchbar = ({ setSearchTerm, handleSearch }) => {
+const Searchbar = () => {
+  const { handleSearch } = useContext(SearchContext);
+  const [searchInput, setSearchInput] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleSearch();
+    handleSearch(searchInput);
   };
 
   return (
@@ -18,7 +23,8 @@ const Searchbar = ({ setSearchTerm, handleSearch }) => {
           name="searchTerm"
           placeholder="Search..."
           autoComplete="off"
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={(e) => setSearchInput(e.target.value)}
+          value={searchInput}
           className="text-tundora-700 dark:text-silver-400 font-karla text-base border-none outline-none bg-inherit m-0 p-0 cursor-auto text-start w-[calc(100%-3em)]"
         />
         <button type="submit" className="cursor-pointer mr-1 align-middle">
