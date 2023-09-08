@@ -1,17 +1,12 @@
 import Loader from "../components/Loader";
 import Post from "../components/Post";
-import getPosts from "../api/getPosts";
 import ErrorMessage from "../components/ErrorMessage";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment } from "react";
+import { motion } from "framer-motion";
+import usePagination from "../hooks/usePagination";
 
 const Home = () => {
-  const [error, setError] = useState(null);
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    getPosts(setPosts, setLoading, setError);
-  }, []);
+  const { posts, loading, error } = usePagination();
 
   if (loading) {
     return <Loader />;
@@ -20,10 +15,19 @@ const Home = () => {
   if (error) {
     return <ErrorMessage error={error} />;
   }
+
   return (
-    <section className="post-container relative w-[700px] ml-[400px]">
+    <motion.section
+      className="post-container relative w-[700px] ml-[400px]"
+      initial="hidden"
+      animate="visible"
+      exit={{ opacity: 0, transition: { duration: 1 } }}
+      variants={{ visible: { transition: { staggerChildren: 0.3 } } }}
+    >
       {posts.length === 0 ? (
-        <p>No posts available.</p>
+        <p className="p-6 text-mine-shaft-950 dark:text-silver-400 font-lato text-2xl tracking-wider leading-5 font-bold italic">
+          No posts available.
+        </p>
       ) : (
         posts?.map((post) => {
           return (
@@ -41,7 +45,7 @@ const Home = () => {
           );
         })
       )}
-    </section>
+    </motion.section>
   );
 };
 
