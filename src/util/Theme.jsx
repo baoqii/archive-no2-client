@@ -1,20 +1,9 @@
-import { useState, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import DarkModeToggle from "../components/DarkModeToggle";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 const Theme = () => {
-  // Initialize the theme state based on local storage or system preference
-  const [isDarkMode, setIsDarkMode] = useState(
-    () =>
-      localStorage.getItem("color-theme") === "dark" ||
-      (!("color-theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-  );
-
-  // Function to toggle the theme state
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-  };
-
+  const { isDarkMode, toggleTheme } = useContext(ThemeContext);
   // Effect to apply the theme mode when the component mounts or when the theme state changes
   useEffect(() => {
     // Toggle icons visibility

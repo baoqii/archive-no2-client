@@ -1,9 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Compass, Home, Mail, User } from "react-feather";
 import { NavLink } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
+import { ThemeContext } from "../contexts/ThemeContext";
 
-const SideMenu = ({ isDarkMode }) => {
+const SideMenu = () => {
+  const { isDarkMode } = useContext(ThemeContext);
+
   const [tooltipVariant, setTooltipVariant] = useState(
     isDarkMode ? "light" : "dark"
   );

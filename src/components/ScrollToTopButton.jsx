@@ -1,8 +1,10 @@
-import { useState, useEffect, Fragment } from "react";
+import { useState, useEffect, Fragment, useContext } from "react";
 import { ArrowUp } from "react-feather";
 import { Tooltip } from "react-tooltip";
+import { ThemeContext } from "../contexts/ThemeContext";
 
-const ScrollToTopButton = ({ isDarkMode }) => {
+const ScrollToTopButton = () => {
+  const { isDarkMode } = useContext(ThemeContext);
   const [isVisible, setIsVisible] = useState(false);
 
   const [tooltipVariant, setTooltipVariant] = useState(
