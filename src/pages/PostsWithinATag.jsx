@@ -12,6 +12,21 @@ const PostsWithinATag = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const frameVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+
+      transition: {
+        duration: 2,
+        staggerChildren: 0.5,
+        ease: [0.02, 0.6, 0.01, 0.91],
+      },
+    },
+  };
+
   useEffect(() => {
     getPostsWithinATag(tag_id, setPosts, setError, setLoading);
   }, [tag_id]);
@@ -26,10 +41,11 @@ const PostsWithinATag = () => {
 
   return (
     <motion.section
-      className="post-container relative w-[700px] ml-[400px]"
+      className="post-container relative w-[700px] ml-[400px] min-h-[500px]"
       initial="hidden"
       animate="visible"
       exit={{ opacity: 0, transition: { duration: 0.3 } }}
+      variants={frameVariants}
     >
       {posts.length === 0 ? (
         <div>

@@ -5,13 +5,28 @@ import { SearchContext } from "../contexts/SearchContext";
 
 const FilteredPosts = () => {
   const { searchTerm, filteredPosts } = useContext(SearchContext);
+  const frameVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+
+      transition: {
+        duration: 2,
+        staggerChildren: 0.5,
+        ease: [0.02, 0.6, 0.01, 0.91],
+      },
+    },
+  };
+
   return (
     <motion.section
       className="post-container relative w-[700px] ml-[400px]"
       initial="hidden"
       animate="visible"
       exit={{ opacity: 0, transition: { duration: 1 } }}
-      variants={{ visible: { transition: { staggerChildren: 0.3 } } }}
+      variants={frameVariants}
     >
       <div className="min-h-[500px]">
         {filteredPosts.length === 0 ? (

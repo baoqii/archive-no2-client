@@ -8,6 +8,7 @@ import parse from "html-react-parser";
 import { decode } from "html-entities";
 import { motion } from "framer-motion";
 import IconImage from "../assets/images/IMG_3968.jpeg";
+import { Variants } from "../util/AnimationVariables";
 
 const PostDetail = () => {
   const { post_id } = useParams();
@@ -31,12 +32,18 @@ const PostDetail = () => {
   return (
     <motion.section
       className="post-container relative w-[700px] ml-[400px]"
-      initial="hidden"
-      animate="visible"
-      exit={{ opacity: 0, transition: { duration: 0.3 } }}
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={Variants}
     >
       {post ? (
-        <article className="posts relative shadow-sm overflow-hidden bg-white dark:bg-eerie-black-950 mt-0 mx-auto mb-[150px] rounded-2xl w-[700px]">
+        <motion.article
+          className="posts relative shadow-sm overflow-hidden bg-white dark:bg-eerie-black-950 mt-0 mx-auto mb-[150px] rounded-2xl w-[700px]"
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           <div className="top-info info align-flex border-b border-solid border-alto-200 dark:border-onyx-900 bg-wild-sand-50 dark:bg-mine-shaft-950 text-tundora-700 dark:text-silver-400 p-6 flex justify-start items-center">
             <div className="info-left align-middle flex justify-between items-center leading-6 flex-shrink-0 max-w-[calc(100%-6em-3em)] whitespace-nowrap overflow-hidden">
               <img
@@ -75,7 +82,7 @@ const PostDetail = () => {
               ))}
             </div>
           </div>
-        </article>
+        </motion.article>
       ) : (
         <p className="p-6 text-mine-shaft-950 dark:text-silver-400 font-lato text-2xl tracking-wider leading-5 font-bold italic">
           No post available.

@@ -1,16 +1,22 @@
 import { motion } from "framer-motion";
 import { ThumbsUp, ThumbsDown, Mail, GitHub, Instagram } from "react-feather";
+import { Variants } from "../util/AnimationVariables";
 
 const About = () => {
   return (
     <motion.section
       className="post-container relative w-[700px] ml-[400px]"
-      initial="hidden"
-      animate="visible"
-      exit={{ opacity: 0, transition: { duration: 1 } }}
-      variants={{ visible: { transition: { staggerChildren: 0.3 } } }}
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={Variants}
     >
-      <div className="about relative shadow-sm overflow-hidden bg-white dark:bg-eerie-black-950 mt-0 p-10 mx-auto mb-5 rounded-2xl w-[700px]">
+      <motion.div
+        className="about relative shadow-sm overflow-hidden bg-white dark:bg-eerie-black-950 mt-0 p-10 mx-auto mb-5 rounded-2xl w-[700px]"
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
         <h1 className="text-mine-shaft-950 dark:text-silver-400 mb-6 transition-all duration-300 text-3xl tracking-wider leading-5 font-lato font-semibold italic">
           About the blogger
         </h1>
@@ -38,8 +44,14 @@ const About = () => {
           imperdiet. Ridiculus mus mauris vitae ultricies leo integer malesuada
           nunc vel.
         </p>
-      </div>
-      <div className="wrapper flex justify-between gap-4">
+      </motion.div>
+      <motion.div
+        className="wrapper flex justify-between gap-4"
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+      >
+        {" "}
         <div className="likedislike w-1/2 shadow-sm bg-white dark:bg-eerie-black-950 p-10 mx-auto rounded-2xl">
           <h1 className="text-mine-shaft-950 dark:text-silver-400 mb-6 transition-all duration-300 text-3xl tracking-wider leading-5 font-lato font-semibold italic">
             Likes & Dislikes
@@ -86,7 +98,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </motion.section>
   );
 };

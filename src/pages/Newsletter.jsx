@@ -1,17 +1,24 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Mail } from "react-feather";
 import { Link } from "react-router-dom";
+import { Variants } from "../util/AnimationVariables";
 
 const Newsletter = () => {
   return (
     <motion.section
       className="post-container relative w-[700px] ml-[400px]"
-      initial="hidden"
-      animate="visible"
-      exit={{ opacity: 0, transition: { duration: 1 } }}
-      variants={{ visible: { transition: { staggerChildren: 0.3 } } }}
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={Variants}
     >
-      <div className="about relative text-center shadow-sm overflow-hidden bg-white dark:bg-eerie-black-950 p-10 rounded-2xl w-[700px]">
+      <motion.div
+        className="relative text-center shadow-sm overflow-hidden bg-white dark:bg-eerie-black-950 p-10 rounded-2xl w-[700px]"
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        {" "}
         <div className="wrapper flex flex-col justify-center items-center h-[600px]">
           <Mail size={100} color="#9ba5cb" className="mt-0 mb-4 mx-auto" />
           <h1 className="text-mine-shaft-950 dark:text-silver-400 mb-2 transition-all duration-300 text-2xl tracking-wider leading-5 font-lato font-bold not-italic">
@@ -55,7 +62,7 @@ const Newsletter = () => {
             </button>
           </Link>
         </div>
-      </div>
+      </motion.div>
     </motion.section>
   );
 };

@@ -5,6 +5,7 @@ import { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Folder, Tag as TagIcon } from "react-feather";
 import { motion } from "framer-motion";
+import { Variants } from "../util/AnimationVariables";
 
 const Tag = ({ tag_id, name }) => {
   return (
@@ -38,11 +39,18 @@ const TagPage = () => {
   return (
     <motion.section
       className="post-container relative w-[700px] ml-[400px] bg-white dark:bg-eerie-black-950 rounded-2xl"
-      initial="hidden"
-      animate="visible"
-      exit={{ opacity: 0, transition: { duration: 0.5 } }}
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={Variants}
     >
-      <div className="h-[600px]">
+      <motion.div
+        className="min-h-[600px]"
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        {" "}
         {tags.length === 0 ? (
           <p className="p-6 text-mine-shaft-950 dark:text-silver-400 font-lato text-2xl tracking-wider leading-5 font-bold italic">
             No tags available.
@@ -67,7 +75,7 @@ const TagPage = () => {
             </div>
           </Fragment>
         )}
-      </div>
+      </motion.div>
     </motion.section>
   );
 };
