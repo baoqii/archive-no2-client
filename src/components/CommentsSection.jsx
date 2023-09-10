@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Comment from "../components/Comment";
 import CommentModal from "./CommentModal";
 import { Plus } from "react-feather";
+import { motion } from "framer-motion";
 
 const CommentsSection = ({ postId }) => {
   const [error, setError] = useState(null);
@@ -47,7 +48,12 @@ const CommentsSection = ({ postId }) => {
   };
 
   return (
-    <article className="post-comments relative shadow-sm overflow-hidden bg-white dark:bg-eerie-black-950 mt-0 mx-auto mb-[150px] rounded-2xl w-[700px]">
+    <motion.article
+      className="post-comments relative shadow-sm overflow-hidden bg-white dark:bg-eerie-black-950 mt-0 mx-auto mb-[150px] rounded-2xl w-[700px]"
+      initial={{ y: 100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+    >
       <div className="title flex justify-between items-center bg-wild-sand-50 dark:bg-mine-shaft-950 p-6 border-b border-solid border-alto-200 dark:border-onyx-900 text-mine-shaft-950 dark:text-silver-400 font-lato text-2xl tracking-wider leading-5 font-bold italic">
         <p>
           {comments?.length === 0
@@ -86,7 +92,7 @@ const CommentsSection = ({ postId }) => {
           );
         })}
       </div>
-    </article>
+    </motion.article>
   );
 };
 

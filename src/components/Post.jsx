@@ -2,10 +2,28 @@ import { Link } from "react-router-dom";
 import parse from "html-react-parser";
 import { decode } from "html-entities";
 import IconImage from "../assets/images/IMG_3968.jpeg";
+import { motion } from "framer-motion";
 
 const Post = ({ id, author, title, content, timestamp, tags, comments }) => {
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 200,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 2,
+        ease: [0.02, 0.6, 0.01, 0.91],
+      },
+    },
+  };
   return (
-    <article className="posts relative shadow-sm overflow-hidden bg-white dark:bg-eerie-black-950 mt-0 mx-auto mb-[150px] rounded-2xl w-[700px]">
+    <motion.article
+      className="posts relative shadow-sm overflow-hidden bg-white dark:bg-eerie-black-950 mt-0 mx-auto mb-[150px] rounded-2xl w-[700px]"
+      variants={itemVariants}
+    >
       <div className="top-info info align-flex border-b border-solid border-alto-200 dark:border-onyx-900 bg-wild-sand-50 dark:bg-mine-shaft-950 text-tundora-700 dark:text-silver-400 p-6 flex justify-start items-center">
         <div className="info-left align-middle flex justify-between items-center leading-6 flex-shrink-0 max-w-[calc(100%-6em-3em)] whitespace-nowrap overflow-hidden">
           <Link
@@ -60,7 +78,7 @@ const Post = ({ id, author, title, content, timestamp, tags, comments }) => {
           ))}
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 };
 
