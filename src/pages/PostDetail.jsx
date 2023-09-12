@@ -51,14 +51,14 @@ const PostDetail = () => {
                 className="w-8 h-8 mr-3 bg-white dark:bg-eerie-black-950 p-0.5 border border-solid border-white dark:border-eerie-black-950 rounded-full align-middle max-w-full hover:border-rock-blue-500 dark:hover:border-rock-blue-200 hover:transition-all hover:duration-500"
               />
               <div className="top-details inline-block align-middle">
-                <div className="title text-xl text-mine-shaft-950 dark:text-silver-400 tracking-wider leading-5 font-lato font-bold italic">
+                <div className="title text-xl text-mine-shaft-950 dark:text-silver-400 tracking-wider font-lato font-bold italic">
                   {post?.author?.username}
                 </div>
               </div>
             </div>
           </div>
           <div className="main-content p-4 bg-white dark:bg-eerie-black-950">
-            <h1 className="post-title px-6 pt-4 pb-0 m-0 text-3xl font-lato text-mine-shaft-950 dark:text-silver-400 tracking-wider leading-5 font-bold italic hover:text-rock-blue-500 dark:hover:rock-blue-200">
+            <h1 className="post-title px-6 pt-4 pb-0 m-0 text-3xl font-lato text-mine-shaft-950 dark:text-silver-400 tracking-wider font-bold italic hover:text-rock-blue-500 dark:hover:rock-blue-200">
               {post?.title}
             </h1>
             <div className="content my-6 px-6">

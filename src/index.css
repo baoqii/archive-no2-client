@@ -8,7 +8,7 @@
   h3,
   h4,
   h5 {
-    @apply text-mine-shaft-950 tracking-wider leading-5 font-bold font-lato italic;
+    @apply text-mine-shaft-950 tracking-wider font-bold font-lato italic dark:text-silver-400;
   }
 }
 
@@ -35,11 +35,4 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #eee;
-  }
 }

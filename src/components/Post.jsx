@@ -36,15 +36,15 @@ const Post = ({ id, author, title, content, timestamp, tags, comments }) => {
             />
           </Link>
           <div className="top-details inline-block align-middle">
-            <div className="title text-xl text-mine-shaft-950 dark:text-silver-400 tracking-wider leading-5 font-lato font-bold italic">
-              <Link to={`/posts/${id}`}>{author.username}</Link>
+            <div className="title text-xl text-mine-shaft-950 dark:text-silver-400 tracking-wider font-lato font-bold italic">
+              <Link to={`/posts/${id}`}>{author?.username}</Link>
             </div>
           </div>
         </div>
       </div>
 
       <div className="main-content p-4 bg-white dark:bg-eerie-black-950">
-        <h1 className="post-title px-6 pt-4 pb-0 m-0 text-3xl font-lato text-mine-shaft-950 dark:text-silver-400 tracking-wider leading-5 font-bold italic">
+        <h1 className="post-title px-6 pt-4 pb-0 m-0 text-3xl font-lato text-mine-shaft-950 dark:text-silver-400 tracking-wider font-bold italic">
           <Link
             to={`/posts/${id}`}
             className="hover:text-rock-blue-500 dark:hover:text-rock-blue-200"
