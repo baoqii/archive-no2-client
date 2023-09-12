@@ -4,9 +4,8 @@ import { ThemeContext } from "../contexts/ThemeContext";
 
 const Theme = () => {
   const { isDarkMode, toggleTheme } = useContext(ThemeContext);
-  // Effect to apply the theme mode when the component mounts or when the theme state changes
+
   useEffect(() => {
-    // Toggle icons visibility
     const themeToggleDarkIcon = document.getElementById(
       "theme-toggle-dark-icon"
     );
@@ -15,13 +14,11 @@ const Theme = () => {
     );
 
     if (isDarkMode) {
-      // Add the 'dark' class to enable dark mode
       themeToggleLightIcon?.classList.add("hidden");
       themeToggleDarkIcon?.classList.remove("hidden");
       document.documentElement.classList.add("dark");
       localStorage.setItem("color-theme", "dark");
     } else {
-      // Remove the 'dark' class to disable dark mode
       themeToggleLightIcon?.classList.remove("hidden");
       themeToggleDarkIcon?.classList.add("hidden");
       document.documentElement.classList.remove("dark");

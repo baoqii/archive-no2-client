@@ -11,7 +11,6 @@ const SideMenu = () => {
     isDarkMode ? "light" : "dark"
   );
 
-  // Listen for changes in the isDarkMode prop and update tooltipVariant accordingly
   useEffect(() => {
     setTooltipVariant(isDarkMode ? "light" : "dark");
   }, [isDarkMode]);

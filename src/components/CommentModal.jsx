@@ -42,16 +42,15 @@ const CommentForm = ({ onSubmit, onClose, setUpdateCommentsSection }) => {
         onSubmit({ author, text });
         setAuthor("");
         setText("");
-        console.log(result.data);
-      } else {
-        console.error(result.message);
       }
     } catch (error) {
       setErrorMessage(
         "An error occurred while submitting your comment. Please try again later."
       );
     } finally {
-      onClose();
+      setTimeout(() => {
+        onClose();
+      }, 1000);
     }
   };
 
