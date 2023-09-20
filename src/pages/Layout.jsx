@@ -11,27 +11,25 @@ import { ThemeContext } from "../contexts/ThemeContext";
 const Layout = () => {
   const { isDarkMode } = useContext(ThemeContext);
   return (
-    <>
-      <main className="container relative mx-auto mt-[50px] mb-4 w-[100dvw] md:w-[700px] xl:w-[calc(300px+700px+100px)]">
-        <Sidebar />
-        <SideMenu />
-        <ScrollToTopButton />
-        <Outlet />
-        <Footer />
-        <ToastContainer
-          position="bottom-center"
-          autoClose={5000}
-          hideProgressBar={true}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss={false}
-          draggable={false}
-          pauseOnHover={false}
-          theme={isDarkMode ? "dark" : "light"}
-        />
-      </main>
-    </>
+    <main className="container relative mx-auto mt-[50px] mb-4 w-[100dvw] md:w-[700px] xl:w-[calc(300px+700px+100px)]">
+      <Sidebar />
+      <SideMenu />
+      <ScrollToTopButton />
+      <Outlet />
+      <Footer />
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable={false}
+        pauseOnHover={false}
+        theme={isDarkMode ? "dark" : "light"}
+      />
+    </main>
   );
 };
 
