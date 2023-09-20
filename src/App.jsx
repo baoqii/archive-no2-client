@@ -1,4 +1,3 @@
-import "./App.css";
 import NotFoundPage from "./pages/NotFoundPage";
 import { Routes, Route, useLocation } from "react-router-dom";
 import PostDetail from "./pages/PostDetail";
