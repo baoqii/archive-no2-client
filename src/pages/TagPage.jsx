@@ -62,10 +62,7 @@ const TagPage = () => {
                 Tags
               </h2>
             </div>
-            <div
-              className="grid  mx-4 grid-cols-[repeat(auto-fill,minmax(150px,1fr))]
-"
-            >
+            <div className="grid  mx-4 grid-cols-[repeat(auto-fill,minmax(150px,1fr))]">
               {tags?.map((tag) => (
                 <div
                   key={tag._id}
