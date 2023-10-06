@@ -22,6 +22,8 @@ function DarkModeToggle({ isDarkMode, onToggle }) {
     <>
       <div
         role="switch"
+        title="dark mode toggle"
+        aria-label="toggle dark and light mode"
         aria-checked={isOn ? "true" : "false"}
         tabIndex={0}
         onClick={handleClick}

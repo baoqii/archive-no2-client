@@ -19,6 +19,8 @@ const SideMenu = () => {
     <nav
       className="sidemenu z-30 w-screen h-[70px] overflow-visible flex 
      xl:h-full xl:w-[70px] top-0 gap-6 xl:flex-col items-center justify-center left-0 fixed bg-white dark:bg-eerie-black-950 transition-all duration-300 ease-linear"
+      aria-label="side menu"
+      title="side menu"
     >
       <NavLink
         to="/"
