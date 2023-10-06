@@ -22,6 +22,7 @@ const SideMenu = () => {
     >
       <NavLink
         to="/"
+        aria-label="Home"
         className="bg-transparent active:bg-rock-blue-500 dark:active-east-bay-800 text-rock-blue-500 dark:text-pigeon-post-400 active:text-white w-[45px] h-[45px] grid items-center place-items-center rounded-md transition-all duration-300 ease-linear cursor-pointer hover:text-white hover:bg-rock-blue-500 dark:hover:bg-east-bay-800"
         data-tooltip-id="tt-home"
         data-tooltip-content="HOME"
@@ -44,6 +45,7 @@ const SideMenu = () => {
       />
       <NavLink
         to="/about"
+        aria-label="About"
         className="bg-transparent active:bg-rock-blue-500 dark:active:bg-east-bay-800 text-rock-blue-500 dark:text-pigeon-post-400 active:text-white w-[45px] h-[45px] grid items-center place-items-center rounded-md transition-all duration-300 ease-linear cursor-pointer hover:text-white hover:bg-rock-blue-500 dark:hover:bg-east-bay-800"
         data-tooltip-id="tt-about"
         data-tooltip-content="ABOUT"
@@ -66,6 +68,7 @@ const SideMenu = () => {
       />
       <NavLink
         to="/tags"
+        aria-label="Tags"
         className="bg-transparent active:bg-rock-blue-500 dark:active:bg-east-bay-800 text-rock-blue-500 dark:text-pigeon-post-400 active:text-white w-[45px] h-[45px] grid items-center place-items-center rounded-md transition-all duration-300 ease-linear cursor-pointer hover:text-white hover:bg-rock-blue-500 dark:hover:bg-east-bay-800"
         data-tooltip-id="tt-navigate"
         data-tooltip-content="NAVIGATE"
@@ -88,6 +91,7 @@ const SideMenu = () => {
       />
       <NavLink
         to="/newsletter"
+        aria-label="Newsletter"
         className="bg-transparent active:bg-rock-blue-500 dark:active:bg-east-bay-800 text-rock-blue-500 dark:text-pigeon-post-400 active:text-white w-[45px] h-[45px] grid items-center place-items-center rounded-md transition-all duration-300 ease-linear cursor-pointer hover:text-white hover:bg-rock-blue-500 dark:hover:bg-east-bay-800"
         data-tooltip-id="tt-newsletter"
         data-tooltip-content="NEWSLETTER"
