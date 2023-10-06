@@ -24,6 +24,7 @@ const Sidebar = () => {
       <div className="side-image-wrap">
         <img
           src={SidebarIcon}
+          alt="avatar"
           className="icon m-0 inline-block max-w-full w-24 h-24 z-[2] bg-white dark:bg-eerie-black-950 p-2.5 shadow-sm border border-solid border-white dark:border-eerie-black-950 rounded-full align-middle transition-all"
         />
       </div>

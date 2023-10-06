@@ -48,6 +48,7 @@ const PostDetail = () => {
             <div className="info-left align-middle flex justify-between items-center leading-6 flex-shrink-0 max-w-[calc(100%-6em-3em)] whitespace-nowrap overflow-hidden">
               <img
                 src={IconImage}
+                alt="avatar"
                 className="w-8 h-8 mr-3 bg-white dark:bg-eerie-black-950 p-0.5 border border-solid border-white dark:border-eerie-black-950 rounded-full align-middle max-w-full hover:border-rock-blue-500 dark:hover:border-rock-blue-200 hover:transition-all hover:duration-500"
               />
               <div className="top-details inline-block align-middle">
