@@ -22,7 +22,7 @@ const NotFoundPage = () => {
           mystery. But you can click the button below to go back to the
           homepage.
         </p>
-        <Link to="/">
+        <Link to="/" aria-label="Home">
           <button
             className="uppercase px-6 mx-4 py-2 rounded-md text-white bg-rock-blue-500 hover:bg-rock-blue-600 active:bg-rock-blue-700 disabled:bg-rock-blue-200 disabled:text-rock-blue-700
           dark:text-eerie-black-950 dark:bg-rock-blue-300 dark:hover:bg-rock-blue-200 dark:active:bg-rock-blue-500 dark:disabled:bg-rock-blue-800 dark:disabled:text-rock-blue-100"

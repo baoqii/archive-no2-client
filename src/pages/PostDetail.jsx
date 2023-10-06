@@ -75,6 +75,7 @@ const PostDetail = () => {
               {post?.tags.map((tag) => (
                 <Link
                   to={`/tag/${tag._id}`}
+                  aria-label="tag link"
                   key={tag._id}
                   className="text-tundora-700 dark:text-silver-400 font-karla text-sm hover:text-rock-blue-500 dark:hover:text-rock-blue-200 cursor-pointer after:inline-block after:w-1.5 after:h-1.5 after:bg-rock-blue-500 dark:after-bg-rock-blue-300 after:rounded-full after:mx-3 after:mb-0.5 after:align-middle last-of-type:after:hidden"
                 >

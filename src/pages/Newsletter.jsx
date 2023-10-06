@@ -50,7 +50,11 @@ const Newsletter = () => {
               </form>
             </div>
           </div>
-          <Link to="/" className="text-tundora-700 dark:text-silver-400">
+          <Link
+            to="/"
+            aria-label="Home"
+            className="text-tundora-700 dark:text-silver-400"
+          >
             <button className="flex items-center justify-center mt-2.5 mx-auto mb-0 bg-transparent text-sm font-semibold cursor-pointer h-10 rounded-md text-center py-2.5 px-5 opacity-100 outline-0 whitespace-nowrap">
               No thanks
               <ArrowRight

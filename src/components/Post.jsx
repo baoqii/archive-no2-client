@@ -28,6 +28,7 @@ const Post = ({ id, author, title, content, timestamp, tags, comments }) => {
         <div className="info-left align-middle flex justify-between items-center leading-6 flex-shrink-0 max-w-[calc(100%-6em-3em)] whitespace-nowrap overflow-hidden">
           <Link
             to={`/posts/${id}`}
+            aria-label="post link"
             className="text-tundora-700 cursor-pointer transition-all duration-300 hover:text-rock-blue-500"
           >
             <img
@@ -38,7 +39,9 @@ const Post = ({ id, author, title, content, timestamp, tags, comments }) => {
           </Link>
           <div className="top-details inline-block align-middle">
             <div className="title text-xl text-mine-shaft-950 dark:text-silver-400 tracking-wider font-lato font-bold italic">
-              <Link to={`/posts/${id}`}>{author?.username}</Link>
+              <Link to={`/posts/${id}`} aria-label="post link">
+                {author?.username}
+              </Link>
             </div>
           </div>
         </div>
@@ -48,6 +51,7 @@ const Post = ({ id, author, title, content, timestamp, tags, comments }) => {
         <h1 className="post-title px-6 pt-4 pb-0 m-0 text-3xl font-lato text-mine-shaft-950 dark:text-silver-400 tracking-wider font-bold italic">
           <Link
             to={`/posts/${id}`}
+            aria-label="post link"
             className="hover:text-rock-blue-500 dark:hover:text-rock-blue-200"
           >
             {title}
@@ -71,6 +75,7 @@ const Post = ({ id, author, title, content, timestamp, tags, comments }) => {
           {tags.map((tag) => (
             <Link
               to={`/tag/${tag._id}`}
+              aria-label="tag link"
               key={tag._id}
               className="text-tundora-700 dark:text-silver-400 font-karla text-sm hover:text-rock-blue-500 dark:hover:text-rock-blue-200 cursor-pointer after:inline-block after:w-1.5 after:h-1.5 after:bg-rock-blue-500 dark:after:bg-rock-blue-200 after:rounded-full after:mx-3 after:mb-0.5 after:align-middle last-of-type:after:hidden"
             >

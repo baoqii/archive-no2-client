@@ -34,6 +34,7 @@ const Sidebar = () => {
           <div className="title text-3xl text-mine-shaft-950 dark:text-silver-400 tracking-wider leading-5 font-lato font-bold italic">
             <NavLink
               to="/"
+              aria-label="Home"
               className="text-mine-shaft-950 dark:text-silver-400 hover:text-rock-blue-500 dark:hover:text-rock-blue-200 cursor-pointer transition-all duration-300"
             >
               Archive No.2

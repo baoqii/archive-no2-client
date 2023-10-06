@@ -11,6 +11,7 @@ const Tag = ({ tag_id, name }) => {
   return (
     <Link
       to={`/tag/${tag_id}`}
+      aria-label="tag link"
       className="hover:text-rock-blue-500 dark:hover:text-rock-blue-200 flex items-center space-x-4 my-3"
     >
       <TagIcon size={14}></TagIcon>
