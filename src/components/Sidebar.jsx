@@ -44,7 +44,11 @@ const Sidebar = () => {
         <div className="description p-5">Description here</div>
         <Searchbar />
       </div>
-      <nav className="flex flex-wrap mt-5 justify-end gap-5 items-center">
+      <nav
+        className="flex flex-wrap mt-5 justify-end gap-5 items-center"
+        aria-label="pagination"
+        title="pagination"
+      >
         <button
           disabled={PrevDisabledCondition}
           aria-label="Previous page"
