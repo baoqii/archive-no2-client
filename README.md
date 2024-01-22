@@ -15,7 +15,7 @@ https://archive-no2-client.netlify.app/
 ## Pages
 | Page | Description |
 | --- | --- |
-| / | Homepage displaying all blog posts. |
+| / | Homepage displaying all blog posts |
 | /about | Display profile of user |
 | /tags | Display tags for navigation |
 | /newsletter | Display option for newsletter subscription |
